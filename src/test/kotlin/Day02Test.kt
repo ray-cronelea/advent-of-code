@@ -1,4 +1,4 @@
-import Day2.Companion.isSafe
+import Day3.Companion.isSafe
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test

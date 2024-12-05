@@ -1,7 +1,7 @@
 import kotlin.math.abs
 
 fun main(args: Array<String>) {
-    Day2().method()
+    Day3().method()
 }
 
 class Day2 {
