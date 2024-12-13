@@ -1,7 +1,7 @@
 import java.util.stream.Collectors
 
 fun main(args: Array<String>) {
-    Day3().method()
+    Day03().method()
 }
 
 private const val DONT_INSTRUCTION = "don't()"
@@ -9,7 +9,7 @@ private const val DO_INSTRUCTION = "do()"
 private const val DONT = false
 private const val DO = true
 
-class Day3 {
+class Day03 {
 
     companion object{
         val instructionRegex = Regex("mul\\(\\d*,\\d*\\)|don't\\(\\)|do\\(\\)")

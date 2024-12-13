@@ -1,10 +1,10 @@
 import kotlin.math.abs
 
 fun main(args: Array<String>) {
-    Day3().method()
+    Day02().method()
 }
 
-class Day2 {
+class Day02 {
 
     fun method() {
 
@@ -13,11 +13,9 @@ class Day2 {
             .readLines()
             .map {
                 it.split(" ")
-                    .stream()
                     .map { it.toInt() }
                     .toList()
             }.count { isSafe(it) }
-
 
         System.out.println(count)
 
@@ -26,24 +24,22 @@ class Day2 {
     companion object {
 
         fun isSafe(input: List<Int>): Boolean {
-            if (isSafeSingle(input)) {
-                return true
-            }
+            if (isSafeSingle(input)) return true
+
 
             for ((index1, _) in input.withIndex()) {
                 val inputWithPositionRemoved = input.filterIndexed { index2, _ ->
                     index2 != index1
                 }
 
-                if (isSafeSingle(inputWithPositionRemoved)) {
-                    return true
-                }
+                if (isSafeSingle(inputWithPositionRemoved)) return true
+
             }
 
             return false
         }
 
-        fun isSafeSingle(input: List<Int>): Boolean {
+        private fun isSafeSingle(input: List<Int>): Boolean {
             return (increasing(input) || decreasing(input)) && withinTolerance(input)
         }
 
@@ -57,14 +53,14 @@ class Day2 {
 
         private fun decreasing(input: List<Int>): Boolean {
             for (index in 0..<input.lastIndex) {
-                if (input[index] < input[index+1]) return false
+                if (input[index] < input[index + 1]) return false
             }
             return true
         }
 
         private fun increasing(input: List<Int>): Boolean {
             for (index in 0..<input.lastIndex) {
-                if (input[index] > input[index+1]) return false
+                if (input[index] > input[index + 1]) return false
             }
             return true
         }

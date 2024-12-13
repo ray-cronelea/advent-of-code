@@ -1,10 +1,10 @@
 import java.util.stream.Collectors
 
 fun main(args: Array<String>) {
-    Day1().method()
+    Day01().method()
 }
 
-class Day1 {
+class Day01 {
 
     fun method() {
 
@@ -15,8 +15,8 @@ class Day1 {
             Pair(values[0], values[1])
         }
 
-        val a = pairs.stream().map { p -> p.first.toInt() }.sorted().collect(Collectors.toList())
-        val b = pairs.stream().map { p -> p.second.toInt() }.sorted().collect(Collectors.toList())
+        val a = pairs.map { it.first.toInt() }.sorted().toList()
+        val b = pairs.map { it.second.toInt() }.sorted().toList()
 
         val countOfElements = b.groupingBy { it }.eachCount()
 
