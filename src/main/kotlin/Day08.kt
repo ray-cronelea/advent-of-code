@@ -15,16 +15,16 @@ class Day08 {
             nodes.forEachIndexed { i, position ->
 
                 for (i in 0..<nodes.size - 1) {
-                    for (j in i+1..<nodes.size) {
+                    for (j in i + 1..<nodes.size) {
 
                         val iNode = nodes[i]
                         val jNode = nodes[j]
                         var iDiff = iNode.i - jNode.i
                         var jDiff = iNode.j - jNode.j
 
-                        for(value in 0..100){
-                            mutableSetOf.add(Position(iNode.i + (iDiff*value), iNode.j + (jDiff*value)))
-                            mutableSetOf.add(Position(jNode.i - (iDiff*value), jNode.j - (jDiff*value)))
+                        for (value in 0..100) {
+                            mutableSetOf.add(Position(iNode.i + (iDiff * value), iNode.j + (jDiff * value)))
+                            mutableSetOf.add(Position(jNode.i - (iDiff * value), jNode.j - (jDiff * value)))
                         }
                     }
                 }
@@ -34,9 +34,6 @@ class Day08 {
             return mutableSetOf
         }
     }
-
-
-
 
 
     fun method() {
